@@ -20,6 +20,11 @@ public class SpawnManager : MonoBehaviour
 
     public Button restartButton;
 
+    [SerializeField]
+    private float enemyMin = 0.5f;
+    [SerializeField]
+    private float enemyMax = 2.0f;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -59,7 +64,15 @@ public class SpawnManager : MonoBehaviour
                     (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
 
                 Vector2 spawnPosition = new Vector2(spawnX, spawnY);
-                Instantiate(targets, spawnPosition, Quaternion.identity);
+                
+                float circleSize = Random.Range(enemyMin, enemyMax);
+
+                Vector3 randomSize = new Vector3(circleSize, circleSize, 1);
+
+                //set it to the scale of previously instantiated circle
+                targets.transform.localScale = randomSize;
+
+                Instantiate(targets, spawnPosition, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f))));
             }
         }
     }
@@ -74,4 +87,6 @@ public class SpawnManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    
 }

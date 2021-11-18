@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 868520862987922364}
   - component: {fileID: 868520862987922366}
   - component: {fileID: 868520862987922337}
+  - component: {fileID: -8448698771452797727}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868520862987922336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2515583, y: 1.2515583, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -122,3 +123,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-8448698771452797727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868520862987922336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee642436547cf44d8c73c45e2dfde48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: -6
+  maxSpeed: 6
+  enemyRb: {fileID: 868520862987922366}
