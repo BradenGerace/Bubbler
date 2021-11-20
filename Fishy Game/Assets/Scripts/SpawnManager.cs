@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject targets;
 
-    private float spawnRate = 1.0f;
+    private float spawnRate = 0.5f;
 
     public TextMeshProUGUI scoreText;
     private int score;
@@ -73,6 +73,12 @@ public class SpawnManager : MonoBehaviour
                 targets.transform.localScale = randomSize;
 
                 Instantiate(targets, spawnPosition, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f))));
+
+                if (spawnRate > 0.1f)
+                {
+                    spawnRate -= 0.002f;
+                }
+                
             }
         }
     }

@@ -18,11 +18,6 @@ public class EnemyMovement : MonoBehaviour
         enemyRb.velocity = RandomVector(minSpeed, maxSpeed);
     }
 
-    Vector3 RandomForce()
-    {
-        return Vector3.up * Random.Range(minSpeed, maxSpeed);
-    }
-
     private Vector3 RandomVector(float min, float max)
     {
         var x = Random.Range(min, max);
