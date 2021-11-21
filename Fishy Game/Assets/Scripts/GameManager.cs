@@ -6,6 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     private EnemyPoints enemyPointsScript;
+    public GameObject enemyPrefab;
 
     public TextMeshProUGUI scoreText;
 
