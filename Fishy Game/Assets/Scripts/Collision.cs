@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Collision : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Collision : MonoBehaviour
     public TextMeshProUGUI levelWonText;
 
     bool gameOver;
+    public GameObject gameOverPanel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,7 +37,7 @@ public class Collision : MonoBehaviour
         {
             if (playerRb != null)
             {
-                Destroy(playerRb);
+                
             }
             Debug.Log("You Died");
             gameOver = true;
@@ -44,13 +46,15 @@ public class Collision : MonoBehaviour
 
     private void Update()
     {
-        if (score >= 100000 && !levelWon)
+        if (score >= 200000 && !levelWon)
         {
             levelWon = true;
+            levelWonText.gameObject.SetActive(true);
+            Debug.Log("Level won");
         }
         if (gameOver)
         {
-
+            gameOverPanel.gameObject.SetActive(true);
         }
     }
 }

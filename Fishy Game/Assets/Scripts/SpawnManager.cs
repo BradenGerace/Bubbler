@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject targets;
     public GameObject player;
 
-    private float spawnRate = 0.5f;
+    private float spawnRate = 0.7f;
 
     public TextMeshProUGUI scoreText;
     private int score;
@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float enemyMin = 0.5f;
     [SerializeField]
-    private float enemyMax = 2.0f;
+    private float enemyMax = 3.0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -71,13 +71,13 @@ public class SpawnManager : MonoBehaviour
                 Vector3 randomSize = new Vector3(circleSize, circleSize, 1);
 
                 //set it to the scale of previously instantiated circle
-                targets.transform.localScale = randomSize * player.transform.localScale.x;
+                targets.transform.localScale = randomSize * (player.transform.localScale.x / 2);
 
                 Instantiate(targets, spawnPosition, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f))));
 
-                if (spawnRate > 0.1f)
+                if (spawnRate > 0.3f)
                 {
-                    spawnRate -= 0.002f;
+                    spawnRate -= 0.001f;
                 }
                 
             }
