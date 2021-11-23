@@ -15,7 +15,9 @@ public class Collision : MonoBehaviour
 
     public Rigidbody2D playerRb;
 
-    float score = 0;
+    public static float score = 0;
+    public static float highscore;
+    public static bool isHighscore;
 
     bool levelWon;
     public TextMeshProUGUI levelWonText;
@@ -33,28 +35,46 @@ public class Collision : MonoBehaviour
             score += collision.transform.localScale.x * 100;
             scoreText.text = "Score: " + Mathf.RoundToInt(score);
         }
-        if (collision.gameObject.tag == tagEnemy && collision.transform.localScale.x > player.transform.localScale.x)
+        if (collision.gameObject.tag == tagEnemy && collision.transform.localScale.x > player.transform.localScale.x && !gameOver)
         {
-            if (playerRb != null)
-            {
-                
-            }
-            Debug.Log("You Died");
-            gameOver = true;
+            GameOver();
+            
         }
+    }
+
+    private void Start()
+    {
+        gameOver = false;
     }
 
     private void Update()
     {
         if (score >= 200000 && !levelWon)
         {
-            levelWon = true;
-            levelWonText.gameObject.SetActive(true);
-            Debug.Log("Level won");
+            LevelWon();
         }
-        if (gameOver)
+        if (score > highscore)
         {
-            gameOverPanel.gameObject.SetActive(true);
+            highscore = score;
+            isHighscore = true;
+
+            PlayerPrefs.SetFloat("highscore", highscore);
         }
+       
+    }
+
+    public void GameOver ()
+    {
+        Debug.Log("You Died");
+        gameOver = true;
+        gameOverPanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void LevelWon ()
+    {
+        levelWon = true;
+        levelWonText.gameObject.SetActive(true);
+        Debug.Log("Level won");
     }
 }

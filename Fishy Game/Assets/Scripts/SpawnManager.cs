@@ -15,11 +15,7 @@ public class SpawnManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int score;
 
-    public TextMeshProUGUI gameOverText;
-
-    public bool isGameActive;
-
-    public Button restartButton;
+    public GameManager gameManager;
 
     [SerializeField]
     private float enemyMin = 0.5f;
@@ -29,40 +25,28 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        isGameActive = true;
+        gameManager = GetComponent<GameManager>();
+
         StartCoroutine(SpawnTarget());
 
         score = 0;
         UpdateScore(0);
+
+
     }
-
-    private void Update()
-    {
-        
-    }
-
-
-
-    public void GameOver()
-    {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        isGameActive = false;
-    }
-
 
     IEnumerator SpawnTarget()
     {
-        while (isGameActive)
+        while (true)
         {
             for (int i = 0; i < 10; i++)
             {
                 yield return new WaitForSeconds(spawnRate);
 
                 float spawnY = Random.Range
-                    (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
+                    (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, (Screen.height + 10))).y);
                 float spawnX = Random.Range
-                    (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+                    (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2((Screen.width + 10), 0)).x);
 
                 Vector2 spawnPosition = new Vector2(spawnX, spawnY);
                 
@@ -89,11 +73,5 @@ public class SpawnManager : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
     
 }
