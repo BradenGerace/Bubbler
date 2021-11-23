@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 868520862987922336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7050123, y: 0.7050123, z: 0.5093417}
+  m_LocalScale: {x: 0.6524279, y: 0.6524279, z: 0.5116924}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &-8448698771452797727
@@ -123,6 +123,7 @@ MonoBehaviour:
   minSpeed: -6
   maxSpeed: 6
   enemyRb: {fileID: 868520862987922366}
+  enemyCollider: {fileID: 1220980459357471281}
 --- !u!114 &7280327561769879658
 MonoBehaviour:
   m_ObjectHideFlags: 0
