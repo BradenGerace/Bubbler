@@ -19,8 +19,10 @@ public class ManuUI : MonoBehaviour
 
         highscore = 0;
 
-       // highscore = PlayerPrefs.GetFloat("highscore", highscore);
-        highscoreText.text = highscore.ToString();
+        // highscore = PlayerPrefs.GetFloat("highscore", highscore);
+        int intHighscore = Mathf.RoundToInt(PlayerPrefs.GetFloat("highscore", 0));
+
+        highscoreText.text = "Highscore: " + intHighscore.ToString();
     }
 
     // Update is called once per frame

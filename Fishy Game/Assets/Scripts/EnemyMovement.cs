@@ -14,11 +14,13 @@ public class EnemyMovement : MonoBehaviour
 
     public Collider2D enemyCollider;
 
+    public GameObject enemy;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyRb.velocity = RandomVector(minSpeed, maxSpeed);
-        StartCoroutine(ActiveRb(1));
+        StartCoroutine(ActiveRb(0.5f + (enemy.transform.localScale.x / 20)));
     }
 
     private Vector3 RandomVector(float min, float max)

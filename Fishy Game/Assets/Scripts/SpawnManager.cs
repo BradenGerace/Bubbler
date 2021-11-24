@@ -55,7 +55,17 @@ public class SpawnManager : MonoBehaviour
                 Vector3 randomSize = new Vector3(circleSize, circleSize, 1);
 
                 //set it to the scale of previously instantiated circle
-                targets.transform.localScale = randomSize * (player.transform.localScale.x / 2);
+
+                if (player.transform.localScale.x <= 4)
+                {
+                    targets.transform.localScale = randomSize * (player.transform.localScale.x / 2);
+
+                }
+                else
+                {
+                    targets.transform.localScale = randomSize * 2;
+
+                }
 
                 Instantiate(targets, spawnPosition, Quaternion.Euler(new Vector3(0, 0, Random.Range(0f, 360f))));
 

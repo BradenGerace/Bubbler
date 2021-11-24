@@ -1798,7 +1798,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 57016da7036a2e34cb884c0ba31e084b, type: 3}
-  m_Color: {r: 0.42775252, g: 1, b: 0.37254906, a: 1}
+  m_Color: {r: 0.3726415, g: 0.85841435, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1894,3 +1894,4 @@ MonoBehaviour:
   playerRb: {fileID: 2145412020}
   levelWonText: {fileID: 1157132191}
   gameOverPanel: {fileID: 690850010}
+  playerSprite: {fileID: 2145412017}
