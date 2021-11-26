@@ -24,6 +24,8 @@ public class Collision : MonoBehaviour
 
     bool gameOver;
     public GameObject gameOverPanel;
+    public TextMeshProUGUI highscoreText;
+    public TextMeshProUGUI winHighscoreText;
 
     public SpriteRenderer playerSprite;
 
@@ -56,6 +58,11 @@ public class Collision : MonoBehaviour
 
                 PlayerPrefs.SetFloat("highscore", score);
                 PlayerPrefs.SetString("highscorename", PlayerPrefs.GetString("name"));
+                highscoreText.text = "New highscore! " + Mathf.RoundToInt(PlayerPrefs.GetFloat("highscore"));
+                highscoreText.gameObject.SetActive(true);
+                winHighscoreText.text = "New highscore! " + Mathf.RoundToInt(PlayerPrefs.GetFloat("highscore"));
+                winHighscoreText.gameObject.SetActive(true);
+
             }
 
         }
