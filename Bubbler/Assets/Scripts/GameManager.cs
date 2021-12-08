@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (!isGameActive)
         {
-            if (!isGameActive)
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 RestartGame();
             }

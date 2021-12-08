@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Collision : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class Collision : MonoBehaviour
     {
         if (collision.gameObject.tag == tagEnemy && collision.transform.localScale.x <= player.transform.localScale.x)
         {
+            FindObjectOfType<AudioManager>().Play("BubblePop");
+
             transform.localScale += collision.gameObject.transform.localScale / 50;
             Destroy(collision.gameObject);
 
@@ -68,6 +71,7 @@ public class Collision : MonoBehaviour
         }
         if (collision.gameObject.tag == tagEnemy && collision.transform.localScale.x > player.transform.localScale.x && !gameOver)
         {
+            FindObjectOfType<AudioManager>().Play("BubblePop");
             GameOver();
             
         }
