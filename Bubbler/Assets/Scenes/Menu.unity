@@ -584,7 +584,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.43402216, g: 0.19588822, b: 0.5849056, a: 0}
+  m_BackGroundColor: {r: 0.011764707, g: 0.15294118, b: 0.53333336, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5945,6 +5945,7 @@ GameObject:
   - component: {fileID: 799963640}
   - component: {fileID: 799963642}
   - component: {fileID: 799963641}
+  - component: {fileID: 799963643}
   m_Layer: 5
   m_Name: Title Backdrop
   m_TagString: Untagged
@@ -6069,6 +6070,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799963639}
   m_CullTransparentMesh: 1
+--- !u!95 &799963643
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799963639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b36eb36e3ff05ec49b3702c078e4b685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &837948126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6103,7 +6123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 320, y: 85.493}
+  m_AnchoredPosition: {x: 320, y: 113}
   m_SizeDelta: {x: 330.5428, y: 93.014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837948128
@@ -6239,7 +6259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -21}
   m_SizeDelta: {x: 269.33, y: 50.0137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897279959
@@ -6590,7 +6610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.981163, y: 46.828617}
+  m_AnchoredPosition: {x: 40.981163, y: 50}
   m_SizeDelta: {x: 446.222, y: 179.4076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126494990
@@ -6613,8 +6633,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Absorb the smaller bubbles.\n- Avoid the bigger bubbles. \n- Reach 100,000
-    points!"
+  m_text: '- Absorb the smaller bubbles.
+
+    - Avoid the bigger bubbles. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -7584,7 +7605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highscoreText: {fileID: 258123200}
-  highscore: 0
   playernameInput: {fileID: 1214977602}
   characterLimit: 0
   defaultName: Bubbs

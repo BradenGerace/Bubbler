@@ -9,7 +9,7 @@ public class ManuUI : MonoBehaviour
 {
     public TextMeshProUGUI highscoreText;
 
-    public float highscore;
+    public static float highscore;
 
     public TMP_InputField playernameInput;
     public int characterLimit;
