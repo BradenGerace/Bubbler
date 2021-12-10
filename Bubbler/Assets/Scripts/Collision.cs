@@ -22,6 +22,7 @@ public class Collision : MonoBehaviour
 
     bool levelWon;
     public TextMeshProUGUI levelWonText;
+    public GameObject levelWonPanel;
 
     bool gameOver;
     public GameObject gameOverPanel;
@@ -33,6 +34,7 @@ public class Collision : MonoBehaviour
     private void Start()
     {
         gameOver = false;
+        levelWon = false;
         score = 0;
     }
 
@@ -101,8 +103,9 @@ public class Collision : MonoBehaviour
 
     public void LevelWon ()
     {
+        FindObjectOfType<AudioManager>().Play("LevelWon");
         levelWon = true;
-        levelWonText.gameObject.SetActive(true);
+        levelWonPanel.gameObject.SetActive(true);
         Debug.Log("Level won");
     }
 }
