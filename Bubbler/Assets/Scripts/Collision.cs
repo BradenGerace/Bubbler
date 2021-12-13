@@ -73,7 +73,8 @@ public class Collision : MonoBehaviour
         }
         if (collision.gameObject.tag == tagEnemy && collision.transform.localScale.x > player.transform.localScale.x && !gameOver)
         {
-            FindObjectOfType<AudioManager>().Play("BubblePop");
+            //FindObjectOfType<AudioManager>().Play("BubblePop");
+            FindObjectOfType<AudioManager>().Play("GameOver");
             GameOver();
             
         }
