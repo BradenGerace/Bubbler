@@ -47,5 +47,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         gameIsPaused = false;
         pausedPanel.gameObject.SetActive(false);
+        unpauseButton.gameObject.SetActive(false);
     }
 }
